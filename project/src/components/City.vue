@@ -2,13 +2,10 @@
     <div>
         <div>
   <b-card
-    :title="city.name"
-  >
+    :title="city.name" :class="color">
     <b-card-text >
       Qualité de l'air : {{city.iqa}}
     </b-card-text>
-
-    <b-button href="#" variant="primary">Go somewhere</b-button>
   </b-card>
 </div>
     </div>
@@ -20,11 +17,36 @@
             city:{
                 type:Object,
                 default:null
+            },
+        },
+        data() {
+            return {
+                color: ""
+            }      
+        },
+        mounted(){
+            if(this.city.iqa<=30){
+            this.color="pollution-faible";
+            console.log("lowwwwwww");
             }
+            if(this.city.iqa>30 && this.city.iqa<=50)this.color="pollution-medium";
+            if(this.city.iqa < 30)this.color="pollution-forte";
+
         }
-    }
+    };
 </script>
 
 <style lang="scss" scoped>
+.pollution-faible{
+    background: green;
+}
 
+.pollution-medium{
+    background: orange;
+
+}
+
+.pollution-forte{
+    background: red;
+}
 </style>

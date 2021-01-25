@@ -22,8 +22,8 @@ export default {
   data() {
     return {
       cities: [{name:"Lyon", iqa:30},
-              {name:"Paris", iqa:21},
-              {name:"Orléans", iqa:12}]
+              {name:"Paris", iqa:38},
+              {name:"Casablanca", iqa:28}]
     }
   },
 }
